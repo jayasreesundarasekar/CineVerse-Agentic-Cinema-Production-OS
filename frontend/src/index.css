@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-void text-parchment font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brass/30 text-parchment;
+  }
+  *:focus-visible {
+    outline: 2px solid theme(colors.brass);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .sprocket-rail {
+    background-image: radial-gradient(circle, theme(colors.hair) 2px, transparent 2.5px);
+    background-size: 100% 22px;
+    background-position: center top;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: theme(colors.hair); border-radius: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

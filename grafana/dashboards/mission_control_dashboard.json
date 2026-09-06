@@ -1,0 +1,34 @@
+{
+  "title": "Cineverse Mission Control",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Simulation Scores Over Time",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": "ClickHouse-Cineverse",
+      "targets": [
+        { "rawSql": "SELECT created_at as time, score, agent_name FROM cineverse.simulation_runs ORDER BY created_at", "format": "time_series" }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Recent Mission Control Events",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": "ClickHouse-Cineverse",
+      "targets": [
+        { "rawSql": "SELECT created_at, agent_name, event_type, payload FROM cineverse.mission_control_events ORDER BY created_at DESC LIMIT 50", "format": "table" }
+      ]
+    },
+    {
+      "type": "bargauge",
+      "title": "Avg Screenplay Score by Dimension",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "datasource": "ClickHouse-Cineverse",
+      "targets": [
+        { "rawSql": "SELECT dimension, avg(score) as avg_score FROM cineverse.screenplay_scores GROUP BY dimension", "format": "table" }
+      ]
+    }
+  ]
+}

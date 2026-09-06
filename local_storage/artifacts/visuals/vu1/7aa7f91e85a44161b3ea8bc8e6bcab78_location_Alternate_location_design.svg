@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="432">
+  <rect width="100%" height="100%" fill="#1a1a2e"/>
+  <text x="24" y="48" fill="#e94560" font-size="22" font-family="sans-serif">[MOCK VISUAL] Alternate location design</text>
+  <text x="24" y="80" fill="#eeeeee" font-size="13" font-family="sans-serif">GEMINI_API_KEY not set</text>
+  <text x="24" y="110" fill="#aaaaaa" font-size="13" font-family="sans-serif">
+    <tspan x="24" dy="0">Prompt:</tspan>
+    <tspan x="24" dy="20">A mysterious coastal town, abandoned colonial buildings, monsoon clouds, wet streets. — Alternate location design.</tspan>
+  </text>
+</svg>
